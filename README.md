@@ -21,3 +21,6 @@
 ```sh
 Docker
 ```
+
+* [H2 console](https://localhost:8080/h2-console/l)
+* [Swagger](https://localhost:8080/swagger-ui.html)
