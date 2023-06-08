@@ -14,4 +14,14 @@ public class EmployeeDto {
     private String firstName;
     private String lastName;
     private String department;
+
+    public void initBeanMethod(){
+        log.info("Instantiating bean is done after this mehthod");
+        System.out.println("Your bean will bean initiated soon");
+    }
+
+    public void destroyBeanMethod(){
+        log.info("Killing the bean is done after this method");
+        System.err.println("Your bean will be killed soon");
+    }
 }
