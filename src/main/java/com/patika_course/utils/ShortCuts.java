@@ -11,5 +11,6 @@ public class ShortCuts {
     comment/un-comment single (ctrl+/)
     comment/un-comment multiple (ctrl+shift+/)
     Run all tests for project (ctrl+shift+f10)
+    Reformat your code (ctrl+Alt+L)
      */
 }
