@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class EmployeeController {
     @Autowired private EmployeeBean employeeBean;
 
-    // https://localhost:8080/api/employee
+    // http://localhost:8080/api/employee
     @GetMapping("employee")
     @ResponseBody
     public ResponseEntity<String> getEmployeeDto(){
