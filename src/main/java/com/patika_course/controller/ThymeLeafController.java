@@ -1,6 +1,7 @@
 package com.patika_course.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,4 +30,12 @@ public class ThymeLeafController {
     public String index_0(){
         return "index_0";
     }
+
+    // http://localhost:8080/thymeleaf1/index_0Data
+    @GetMapping("/index_0Data")
+    public String index_0Data(Model model){
+        model.addAttribute("static_data","This is static data sent to template");
+        return "index_0";
+    }
+
 }
