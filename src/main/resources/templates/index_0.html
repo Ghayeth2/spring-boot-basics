@@ -33,6 +33,27 @@
     <input type="text" class="form-control" th:placeholder="#{lastName}" id="last_name" name="lastName" required
            autofocus>
 </form>
+<div>
+    <h3 class="center" th:text="'Employee Bean'"></h3>
+    <p th:text="${employee}"></p>
+</div>
+<div>
+    <table>
+        <tr>
+            <td>Student id</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Department</td>
+        </tr>
+        <tr th:each="emp:${employees}">
+            <td th:text="${emp.studentNo}"></td>
+            <td th:text="${emp.firstName}"></td>
+            <td th:text="${emp.lastName}"></td>
+            <td th:if="${emp.department.equals('CMPE') }" th:text="'Computer Engineering'"></td>
+            <td th:unless="${emp.department.equals('CMPE') }" th:text="'Other Department'"></td>
+        </tr>
+    </table>
+</div>
 
 <!-- Bootstrap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

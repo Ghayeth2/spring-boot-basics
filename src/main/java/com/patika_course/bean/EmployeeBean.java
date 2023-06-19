@@ -4,6 +4,11 @@ import com.patika_course.dtos.EmployeeDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.transaction.ReactiveTransaction;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 // This annotation along with Bean is to make the class and mehtods
@@ -21,5 +26,17 @@ public class EmployeeBean {
                     .lastName("AL MASRI")
                     .department("Computer Engineering")
                 .build();
+    }
+
+    @Bean
+    @Scope("request")
+    public List<EmployeeDto> getEmployeeBeans(){
+        List<EmployeeDto> employees = new ArrayList<>(Arrays.asList(
+                EmployeeDto.builder().firstName("GHAYETH").lastName("AL MASRI").department("CMPE").studentNo(1910206548L).build(),
+                EmployeeDto.builder().firstName("YASIN").lastName("AL SAYASNEH").department("YZM").studentNo(1910206549L).build(),
+                EmployeeDto.builder().firstName("AHMAD").lastName("OZDEMIR").department("TIP").studentNo(1910206550L).build(),
+                EmployeeDto.builder().firstName("MOHAMMAD").lastName("MAHAMEED").department("ECZ").studentNo(1910206551L).build()
+        ));
+        return employees;
     }
 }
