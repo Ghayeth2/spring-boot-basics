@@ -2,10 +2,7 @@ package com.patika_course.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/thymeleaf1")
@@ -53,6 +50,17 @@ public class ThymeLeafController {
             model.addAttribute("id", "Coming id: "+id);
         else
             model.addAttribute("id", "No id found");
+        return "index_0";
+    }
+
+    //  http://localhost:8080/thymeleaf1/index?id=5
+    @GetMapping("/requestparam")
+    public String indexReq(@RequestParam(value = "iddd", required = false, defaultValue = "0") Integer id,
+                           Model model){
+        if(id != null)
+            model.addAttribute("idd", "Id in RequestParam: "+id);
+        else
+            model.addAttribute("idd", "No id found");
         return "index_0";
     }
 
