@@ -22,7 +22,7 @@ public class FormController {
         return "formValidation";
     }
 
-    // http:localhost:8080/form
+    // http://localhost:8080/form
     // Can I use same below code only without sending Empty Object for Save operation too??
     @PostMapping("")
     public String form(@Valid @ModelAttribute("player") PlayerDto player,
@@ -32,8 +32,8 @@ public class FormController {
             return "formValidation";
         }
         log.info("Success "+player);
-        // Database saving
-        // File saving
+        // Database saving  (SRP) >> Saving to database should not be in controller
+        // File saving      (SRP) >> Saving to file should not be in controller
         return "success";
 
     }
