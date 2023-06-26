@@ -1,4 +1,4 @@
-package com.patika_course.controller;
+package com.patika_course.tutorials.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
-package com.patika_course.postconstruct.business;
+package com.patika_course.tutorials.postconstruct.business;
 
-import com.patika_course.postconstruct.model.Customer;
+import com.patika_course.tutorials.postconstruct.model.Customer;
 import org.springframework.stereotype.Service;
 
 @Service

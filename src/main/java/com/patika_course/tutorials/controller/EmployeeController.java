@@ -1,8 +1,7 @@
-package com.patika_course.controller;
+package com.patika_course.tutorials.controller;
 
-import com.patika_course.bean.EmployeeBean;
+import com.patika_course.tutorials.bean.EmployeeBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

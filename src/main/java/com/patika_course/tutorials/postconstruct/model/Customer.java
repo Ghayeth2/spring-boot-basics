@@ -1,4 +1,4 @@
-package com.patika_course.postconstruct.model;
+package com.patika_course.tutorials.postconstruct.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

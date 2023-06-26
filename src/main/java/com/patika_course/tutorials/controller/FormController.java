@@ -1,6 +1,6 @@
-package com.patika_course.controller;
+package com.patika_course.tutorials.controller;
 
-import com.patika_course.dtos.PlayerDto;
+import com.patika_course.tutorials.dtos.PlayerDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,8 +26,9 @@ public class FormController {
     // Can I use same below code only without sending Empty Object for Save operation too??
     @PostMapping("")
     public String form(@Valid @ModelAttribute("player") PlayerDto player,
-                       BindingResult bindingResult){
+                       BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
+            model.addAttribute("player", player);
             log.error("An error occurred!");
             return "formValidation";
         }

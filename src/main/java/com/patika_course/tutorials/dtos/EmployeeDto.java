@@ -1,4 +1,4 @@
-package com.patika_course.dtos;
+package com.patika_course.tutorials.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

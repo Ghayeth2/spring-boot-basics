@@ -1,7 +1,7 @@
-package com.patika_course.postconstruct.controller;
+package com.patika_course.tutorials.postconstruct.controller;
 
-import com.patika_course.postconstruct.business.CustomerManager;
-import com.patika_course.postconstruct.model.Customer;
+import com.patika_course.tutorials.postconstruct.business.CustomerManager;
+import com.patika_course.tutorials.postconstruct.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
