@@ -10,12 +10,13 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Data @Log4j2 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity @Table(name = "player")
-public class PlayerDto {
+public class PlayerDto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
