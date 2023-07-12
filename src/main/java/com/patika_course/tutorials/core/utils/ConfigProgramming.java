@@ -1,4 +1,4 @@
-package com.patika_course.utils;
+package com.patika_course.tutorials.core.utils;
 
 public class ConfigProgramming {
     /*

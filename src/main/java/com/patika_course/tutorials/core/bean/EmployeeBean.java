@@ -1,4 +1,4 @@
-package com.patika_course.tutorials.bean;
+package com.patika_course.tutorials.core.bean;
 
 import com.patika_course.tutorials.dtos.EmployeeDto;
 import org.springframework.context.annotation.Bean;
