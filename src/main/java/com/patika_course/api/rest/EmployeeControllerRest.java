@@ -18,6 +18,11 @@ public class EmployeeControllerRest {
 
     // https://localhost:8080/api/v1/new
     @PostMapping("/new")
+    /*
+      Validation Error not handled in Back-end side
+
+        Using @ExceptionHandler & @RestControllerAdvice is handy for back-end
+     */
     public ResponseEntity<String> save(@Valid @RequestBody EmployeeDto employeeDto) {
         return new ResponseEntity<>(this.employeeServices.save(employeeDto), HttpStatus.CREATED);
     }
@@ -36,7 +41,12 @@ public class EmployeeControllerRest {
 
     //https://localhost:8080/api/v1/update/1
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> update(@RequestBody EmployeeDto employeeDto, @PathVariable("id") Long id){
+    /*
+      Validation Error not handled in Back-end side
+
+       Using @ExceptionHandler & @RestControllerAdvice is handy for back-end
+     */
+    public ResponseEntity<String> update(@Valid @RequestBody EmployeeDto employeeDto, @PathVariable("id") Long id){
         return new ResponseEntity<>(this.employeeServices.update(employeeDto, id), HttpStatus.ACCEPTED);
     }
 
