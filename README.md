@@ -2,9 +2,12 @@
 - Java 17
 - Spring Framework
 - Spring Boot
+- Thymeleaf
 - Spring Data JPA
 - Spring MVC
 - Spring Rest (http status)
+- Auditing
+- Unit Test
 - Spring Security
 
 ---
