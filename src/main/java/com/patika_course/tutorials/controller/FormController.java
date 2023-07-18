@@ -21,30 +21,30 @@ import java.io.ObjectOutputStream;
 @RequestMapping("/form")
 public class FormController {
 
-    @Autowired
-    private PlayerService playerService;
-    // http://localhost:8080/form
-    @GetMapping("")
-    public String form(Model model){
-        model.addAttribute("player", new PlayerDto());
-        return "formValidation";
-    }
-
-    // http://localhost:8080/form
-    // Can I use same below code only without sending Empty Object for Save operation too??
-    @PostMapping("")
-    public String form(@Valid @ModelAttribute("player") PlayerDto player,
-                       BindingResult bindingResult, Model model){
-        if(bindingResult.hasErrors()){
-            model.addAttribute("player", player);
-            log.error("An error occurred!");
-            return "formValidation";
-        }
-        log.info("Success "+player);
-        // Database saving  (SRP) >> Saving to database should not be in controller
-        playerService.save(player);
-        // File saving      (SRP) >> Saving to file should not be in controller
-        new IOStream().save(player);
-        return "success";
-    }
+//    @Autowired
+//    private PlayerService playerService;
+//    // http://localhost:8080/form
+//    @GetMapping("")
+//    public String form(Model model){
+//        model.addAttribute("player", new PlayerDto());
+//        return "formValidation";
+//    }
+//
+//    // http://localhost:8080/form
+//    // Can I use same below code only without sending Empty Object for Save operation too??
+//    @PostMapping("")
+//    public String form(@Valid @ModelAttribute("player") PlayerDto player,
+//                       BindingResult bindingResult, Model model){
+//        if(bindingResult.hasErrors()){
+//            model.addAttribute("player", player);
+//            log.error("An error occurred!");
+//            return "formValidation";
+//        }
+//        log.info("Success "+player);
+//        // Database saving  (SRP) >> Saving to database should not be in controller
+//        playerService.save(player);
+//        // File saving      (SRP) >> Saving to file should not be in controller
+//        new IOStream().save(player);
+//        return "success";
+//    }
 }

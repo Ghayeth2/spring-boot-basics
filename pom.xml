@@ -53,19 +53,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
-
-		<!--		Spring Data Jpa-->
-
-
-		<!--		Spring MVC-->
-
-
-		<!--		Libraries -->
-		<!--				DevTools-->
-
-		<!--				Lombok-->
-
 		<!--actuator-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

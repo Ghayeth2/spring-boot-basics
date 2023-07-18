@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <title>Registration</title>
+</head>
+<body class=" container">
+<!--Navigation start-->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#" th:text="Home" th:href="@{/} "></a>-->
+<!--    </div>-->
+<!--</nav>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" th:text="'Home'" th:href="@{/}"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    </div>
+</nav>
+<!--Navigation end-->
+<!--Success message-->
+<div th:if="${param.success}">
+    <div class="alert alert-success" th:text="'You have registered..'"></div>
+</div>
+<!--Success message-->
+
+<p class="display-1 text-uppercase text-center text-primary bordered mt-5">Register</p>
+<form th:method="post" th:action="@{/registration}" th:object="${user}">
+    <div class="form-group mb-4">
+        <label th:text="#{firstName}" for="firstName" class="text-capitalize text-muted"></label>
+        <input th:field="*{firstName}" type="text" class="form-control" name="firstName" id="firstName"
+               th:placeholder="#{firstName}" autofocus>
+        <p class="text-danger" th:if="${#fields.hasErrors()}" th:errors="*{firstName}"></p>
+    </div>
+    <div class="form-group mb-4">
+        <label th:text="#{lastName}" for="lastName" class="text-capitalize text-muted"></label>
+        <input th:field="*{lastName}" type="text" class="form-control" name="lastName" id="lastName"
+               th:placeholder="#{lastName}" autofocus>
+        <p class="text-danger" th:if="${#fields.hasErrors()}" th:errors="*{lastName}"></p>
+    </div>
+    <div class="form-group mb-4">
+        <label th:text="#{email}" for="email" class="text-capitalize text-muted"></label>
+        <input th:field="*{email}" type="text" class="form-control" name="email" id="email"
+               th:placeholder="#{email}" autofocus>
+        <p class="text-danger" th:if="${#fields.hasErrors()}" th:errors="*{email}"></p>
+    </div>
+    <div class="form-group mb-4">
+        <label th:text="#{password}" for="password" class="text-capitalize text-muted"></label>
+        <input th:field="*{password}" type="password" class="form-control" name="password" id="password"
+               th:placeholder="#{password}" autofocus>
+        <p class="text-danger" th:if="${#fields.hasErrors()}" th:errors="*{password}"></p>
+    </div>
+    <div class="form-group mb-4">
+        <button th:text="#{reset}" type="reset" class="btn btn-danger"></button>
+        <button class="btn btn-primary" type="submit" th:text="Register"></button>
+    </div>
+</form>
+<a class="navbar-brand" th:text="'Sign in'" th:href="@{/login}"></a>
+
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
